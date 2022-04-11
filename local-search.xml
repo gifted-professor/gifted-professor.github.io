@@ -4,19 +4,6 @@
   
   
   <entry>
-    <title>My fristBlog</title>
-    <link href="/2022/04/11/fristBlog/"/>
-    <url>/2022/04/11/fristBlog/</url>
-    
-    <content type="html"><![CDATA[<h3 id="那就写一些今天炒的作业⑧"><a href="#那就写一些今天炒的作业⑧" class="headerlink" title="那就写一些今天炒的作业⑧"></a>那就写一些今天炒的作业⑧</h3><table><thead><tr><th>动作</th><th>交换表的状态</th><th>向那些接口转发帧</th><th>说明</th></tr></thead><tbody><tr><td>A发送帧给D</td><td>写入（A，1）</td><td>所有接口</td><td>发送之前为空表 发送后在入A接口在1</td></tr><tr><td>B发送帧给A</td><td>写入（D，4）</td><td>A接口</td><td>之前有A的信息 发送后存入D接口在4</td></tr><tr><td>E发送帧给A</td><td>写入（E，5）</td><td>A接口</td><td>之前有A的信息 发送后存入E接口在5</td></tr><tr><td>A发送帧给E</td><td>不变</td><td>E接口</td><td>现在既有A又有E的信息</td></tr></tbody></table>]]></content>
-    
-    
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>Hello World</title>
     <link href="/2022/04/11/hello-world/"/>
     <url>/2022/04/11/hello-world/</url>
