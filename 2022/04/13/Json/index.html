@@ -1,0 +1,519 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/logo.png">
+  <link rel="icon" href="/img/logo.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="JSON的由来重要的数据格式 不是编程语言 可以在服务器和客户端之间传输的数据格式 JavaScript Object Notation 是哟中轻量级的资源交换格式 算是js的一种子集 可以在各个编程语言中使用 很多编程语言都将json转化为对应模型的方式 XML   解析起来很麻烦 传输速度也慢（因为数据的格式是标签什么的） Protobuf    越来越多使用   21年的3.x版本才支持js">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Json">
+<meta property="og:url" content="http://example.com/2022/04/13/Json/index.html">
+<meta property="og:site_name" content="giftedProfessor&#39;s blog">
+<meta property="og:description" content="JSON的由来重要的数据格式 不是编程语言 可以在服务器和客户端之间传输的数据格式 JavaScript Object Notation 是哟中轻量级的资源交换格式 算是js的一种子集 可以在各个编程语言中使用 很多编程语言都将json转化为对应模型的方式 XML   解析起来很麻烦 传输速度也慢（因为数据的格式是标签什么的） Protobuf    越来越多使用   21年的3.x版本才支持js">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/.com//Users/Administrator/AppData/Roaming/Typora/typora-user-images/1650001386007.png">
+<meta property="article:published_time" content="2022-04-13T06:34:10.000Z">
+<meta property="article:modified_time" content="2022-04-15T05:44:57.141Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="Js高级">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://example.com/.com//Users/Administrator/AppData/Roaming/Typora/typora-user-images/1650001386007.png">
+  
+  
+  <title>Json - giftedProfessor&#39;s blog</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4/github-markdown.min.css" />
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hint.css@2/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.14","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 6.1.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>天才较瘦</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="Json">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2022-04-13 14:34" pubdate>
+        2022年4月13日 下午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      3.4k 字
+    </span>
+  
+
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      29 分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">Json</h1>
+            
+            <div class="markdown-body">
+              <h2 id="JSON的由来"><a href="#JSON的由来" class="headerlink" title="JSON的由来"></a>JSON的由来</h2><p>重要的数据格式 不是编程语言 可以在服务器和客户端之间传输的数据格式</p>
+<p>JavaScript Object Notation</p>
+<p>是哟中轻量级的资源交换格式 算是js的一种子集</p>
+<p>可以在各个编程语言中使用</p>
+<p>很多编程语言都将json转化为对应模型的方式</p>
+<p>XML   解析起来很麻烦 传输速度也慢（因为数据的格式是标签什么的）</p>
+<p><strong>Protobuf</strong>    越来越多使用   21年的3.x版本才支持js 所以前端现在用的很少 以后可能会多   </p>
+<p>这是之前的传输格式</p>
+<p>应用场景    网络数据传输JSON   项目的某些配置文件（小程序的app.json）      非关系库(NoSQL)将json作为存储格式</p>
+<h2 id="JSON的基本语法"><a href="#JSON的基本语法" class="headerlink" title="JSON的基本语法"></a>JSON的基本语法</h2><p>以.json作为后缀    <code>haha.json    app.json      package.json</code>     </p>
+<p>支持简单值（Numer   String（不支持单引号）   Bool类型     null类型）  </p>
+<figure class="highlight json"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div></td><td class="code"><pre><code class="hljs json"><span class="hljs-number">123</span><br><span class="hljs-string">&quot;abc&quot;</span><br><span class="hljs-keyword">null</span><br><span class="hljs-keyword">true</span><br>undefined<br></code></pre></td></tr></table></figure>
+
+<p>对象值  </p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs json"><span class="hljs-punctuation">&#123;</span><br>	<span class="hljs-attr">&quot;name&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;why&quot;</span><br><span class="hljs-punctuation">&#125;</span><br></code></pre></td></tr></table></figure>
+
+<p>数组值</p>
+<figure class="highlight prolog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs prolog">&#123;<br>	<span class="hljs-string">&quot;hobbies&quot;</span>: [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>]<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p><strong>JSON里面不可以有注释</strong></p>
+<p>jsonp是为了解决跨域   返回的是一个方法？</p>
+<h2 id="JSON序列化需要"><a href="#JSON序列化需要" class="headerlink" title="JSON序列化需要"></a>JSON序列化需要</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> obj = &#123;<br>    <span class="hljs-attr">namne</span>: <span class="hljs-string">&quot;111&quot;</span>,<br>    <span class="hljs-attr">age</span>: <span class="hljs-number">18</span>,<br>    <span class="hljs-attr">friedns</span>: &#123;<br>        <span class="hljs-attr">name</span>: <span class="hljs-string">&quot;222&quot;</span><br>    &#125;<br>    <span class="hljs-attr">hobbies</span>: [<span class="hljs-string">&quot;烂球&quot;</span>， <span class="hljs-string">&quot;组件&quot;</span>]<br>&#125;<br><span class="hljs-comment">//将obj对象先变成obj对象</span><br><span class="hljs-keyword">const</span> objString = <span class="hljs-title class_">JSON</span>.<span class="hljs-title function_">stringify</span>(obj)<br><span class="hljs-variable language_">localStorage</span>.<span class="hljs-title function_">setItem</span>(<span class="hljs-string">&quot;obj&quot;</span>, objString)<br><span class="hljs-keyword">const</span> jsonString = <span class="hljs-variable language_">localStorage</span>.<span class="hljs-title function_">getItem</span>(<span class="hljs-string">&quot;obj&quot;</span>)<br><br>json格式字符串变成对象<br><span class="hljs-keyword">const</span> info = <span class="hljs-title class_">JSON</span>.<span class="hljs-title function_">parse</span>(jsonString)		<span class="hljs-comment">//json格式编程一个对象</span><br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(info)	<span class="hljs-comment">//一个对象</span><br></code></pre></td></tr></table></figure>
+
+
+
+<h3 id="stringify细节"><a href="#stringify细节" class="headerlink" title="stringify细节"></a>stringify细节</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">//直接转化</span><br><span class="hljs-keyword">const</span> jsonString1 = <span class="hljs-title class_">JSON</span>.<span class="hljs-title function_">stringify</span>(obj)<br><br><span class="hljs-comment">//第二个参数</span><br><span class="hljs-comment">// 传入数组 设定需要转换的数据</span><br><span class="hljs-keyword">const</span> jsonString1 = <span class="hljs-title class_">JSON</span>.<span class="hljs-title function_">stringify</span>(obj, [<span class="hljs-string">&quot;name&quot;</span>, <span class="hljs-string">&quot;friends&quot;</span>])<br><br><span class="hljs-comment">//传入回调函数</span><br><span class="hljs-keyword">const</span> jsonString1 = <span class="hljs-title class_">JSON</span>.<span class="hljs-title function_">stringify</span>(obj, <span class="hljs-function">(<span class="hljs-params">key, value</span>) =&gt;</span> &#123;<br>    <span class="hljs-keyword">if</span>(key == <span class="hljs-string">&quot;age&quot;</span>)&#123;<br>        <span class="hljs-keyword">return</span> value + <span class="hljs-number">1</span><br>    &#125;<br>    <span class="hljs-keyword">return</span> value<br>&#125;)<br><br><span class="hljs-comment">//space</span><br><span class="hljs-keyword">const</span> jsonString1 = <span class="hljs-title class_">JSON</span>.<span class="hljs-title function_">stringify</span>(obj, <span class="hljs-literal">null</span>, <span class="hljs-number">4</span>)<br><span class="hljs-comment">//这个的话可以在输出的时候让数据可视化更强</span><br><span class="hljs-comment">//&#123;</span><br><span class="hljs-comment">//	name: ~,</span><br><span class="hljs-comment">//    ~</span><br><span class="hljs-comment">//    ~</span><br><span class="hljs-comment">//    ~</span><br><span class="hljs-comment">//&#125;</span><br><span class="hljs-comment">//其中这个4代表的是缩进 如果也可以自定义</span><br><br><span class="hljs-comment">//只要在对象的配置项中有一个tojson 所有数据返回的都是tojson里面的值</span><br></code></pre></td></tr></table></figure>
+
+
+
+<h2 id="parse细节"><a href="#parse细节" class="headerlink" title="parse细节"></a>parse细节</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> <span class="hljs-title class_">JSON</span><span class="hljs-built_in">String</span>=<span class="hljs-string">&#x27;&#123;namne: &quot;111&quot;,age: 18,friedns: &#123;name: &quot;222&quot;&#125;hobbies: [&quot;烂球&quot;， &quot;组件&quot;]&#125;&#x27;</span><br><br><span class="hljs-keyword">const</span> info = <span class="hljs-title class_">JSON</span>.<span class="hljs-title function_">parse</span>(<span class="hljs-title class_">JSON</span><span class="hljs-built_in">String</span>, <span class="hljs-function">(<span class="hljs-params">key, value</span>) =&gt;</span> &#123;<br>    <span class="hljs-keyword">if</span>(key === <span class="hljs-string">&quot;age&quot;</span>) &#123;<br>        <span class="hljs-keyword">return</span> value  - <span class="hljs-number">1</span><br>    &#125;<br>    <span class="hljs-keyword">return</span> value<br>&#125;)<br><br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(info)<br><br></code></pre></td></tr></table></figure>
+
+
+
+<h2 id="利用JSON的序列化作深拷贝"><a href="#利用JSON的序列化作深拷贝" class="headerlink" title="利用JSON的序列化作深拷贝"></a>利用JSON的序列化作深拷贝</h2><p>const info &#x3D; obj		这样的话相当于</p>
+<h2 id="浅拷贝"><a href="#浅拷贝" class="headerlink" title="浅拷贝"></a>浅拷贝</h2><p>const info &#x3D; […obj]</p>
+<h2 id="stringify和parse来实现深拷贝"><a href="#stringify和parse来实现深拷贝" class="headerlink" title="stringify和parse来实现深拷贝"></a>stringify和parse来实现深拷贝</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> jsonString1 = <span class="hljs-title class_">JSON</span>.<span class="hljs-title function_">stringify</span>(obj)<br><span class="hljs-keyword">const</span> info = <span class="hljs-title class_">JSON</span>.<span class="hljs-title function_">parse</span>(jsonString)		<br><br></code></pre></td></tr></table></figure>
+
+<p>这种方法有弊端 就是如果在json中有函数的话 就不会拷贝过来 如果有的话 默认掠过这个函数不会拷贝出来</p>
+<p>因为json本来就没办法解析函数</p>
+<h2 id="Storage"><a href="#Storage" class="headerlink" title="Storage"></a>Storage</h2><p>提供一种机制 比cookie更直观的key value存储方式</p>
+<p>localStorage  本地存储 永久性的存储方法 关掉浏览器之后数据仍然存在</p>
+<p>sessionStorage 绘画存储 关闭会话的时候内容就会被清楚</p>
+<h5 id="二者的区别"><a href="#二者的区别" class="headerlink" title="二者的区别"></a>二者的区别</h5><p>关闭网页后重新打开 local。。。会保留 session。。。不会</p>
+<p>页面内跳转 都会保留</p>
+<p>页面外实现跳转 也就是打开新的网页 local。。。会保留 session。。。不会</p>
+<h5 id="属性和方法"><a href="#属性和方法" class="headerlink" title="属性和方法"></a>属性和方法</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-title function_">setItem</span>(<span class="hljs-string">&quot;key&quot;</span>, value)<br><br><span class="hljs-variable language_">localStorage</span>.<span class="hljs-property">length</span><br><br><span class="hljs-keyword">for</span>(.....) &#123;<br>	<span class="hljs-keyword">const</span> key = <span class="hljs-variable language_">localStorage</span>.<span class="hljs-title function_">key</span>(i)<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-variable language_">localStorage</span>.<span class="hljs-title function_">getItem</span>(key))<br>&#125;<br><br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-variable language_">localStorage</span>.<span class="hljs-title function_">key</span>(<span class="hljs-number">0</span>))<br><br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-variable language_">localStorage</span>.<span class="hljs-title function_">getItem</span>(<span class="hljs-string">&quot;age&quot;</span>))<br><br><span class="hljs-variable language_">localStorage</span>.<span class="hljs-title function_">removeItem</span>(<span class="hljs-string">&quot;age&quot;</span>)<br><br><span class="hljs-variable language_">localStorage</span>.<span class="hljs-title function_">clear</span>()<br></code></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="关于Storage工具的封装"><a href="#关于Storage工具的封装" class="headerlink" title="关于Storage工具的封装"></a>关于Storage工具的封装</h2><p><a target="_blank" rel="noopener" href="https://juejin.cn/post/7072942815738593288">点这个</a></p>
+<h2 id="indexedDB"><a href="#indexedDB" class="headerlink" title="indexedDB"></a>indexedDB</h2><p>Database &#x3D;&#x3D;&#x3D; DB</p>
+<p>就是一个适用于前端的数据库 当在前端需要存储大量数据到本地（浏览器）的时候</p>
+<p>一般都是很简单的储存 token username password ………</p>
+<p><strong>一种底层的API   存储在客户端大量的结构化数据</strong></p>
+<blockquote>
+<p>一种<strong>事务</strong>型数据库</p>
+<p>事务是对数据库进行操作的时候一个操作单元 基于js面向对象数据库 类似于NoSQL（非关系型）</p>
+<p>例子 <strong>转钱</strong> <strong>同生共死</strong></p>
+<p>IndexedDB是基于事务的 只需要指定数据库模式 打开与数据库的链接 然后检索和更新一系列事务</p>
+</blockquote>
+<h4 id="indexedDB的操作"><a href="#indexedDB的操作" class="headerlink" title="indexedDB的操作"></a>indexedDB的操作</h4><p>增删改查</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs js">按钮<br>按钮<br>按钮<br>按钮<br><br><span class="hljs-keyword">const</span> transation = db.<span class="hljs-title function_">transaction</span>(<span class="hljs-string">&quot;user&quot;</span>, <span class="hljs-string">&quot;readwrite&quot;</span>) <span class="hljs-comment">//创建事务 这里user这个位置也可以是数组</span><br><span class="hljs-comment">//从users食物中 拿到store对象</span><br><br></code></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> dbReuest = indexedDB.<span class="hljs-title function_">open</span>(<span class="hljs-string">&quot;why&quot;</span>， <span class="hljs-string">&quot;数据库版本&quot;</span>) <span class="hljs-comment">//打开数据 连接数据库</span><br><span class="hljs-comment">//如果数据库不存在就会创建这个数据库</span><br><span class="hljs-comment">//存在的话就打开</span><br>dbReuest.<span class="hljs-property">ononerror</span> = <span class="hljs-keyword">function</span>(<span class="hljs-params">err</span>) &#123;<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;shibai &quot;</span>)<br>&#125;<br><br><span class="hljs-comment">//打开成功会来到这里</span><br><span class="hljs-keyword">let</span> db = <span class="hljs-literal">null</span><br><br>dbReuest.<span class="hljs-property">onsuccess</span> = <span class="hljs-keyword">function</span>(<span class="hljs-params">err</span>) &#123;<br>    <span class="hljs-keyword">const</span> db = event.<span class="hljs-property">target</span>.<span class="hljs-property">result</span><br>&#125;<br><br><br><span class="hljs-comment">//第一次打开 或者版本发生更新</span><br>dbReuest.<span class="hljs-property">onupgradeneeded</span> = <span class="hljs-keyword">function</span>(<span class="hljs-params">err</span>) &#123;<br>    <span class="hljs-keyword">const</span> db = event.<span class="hljs-property">target</span>.<span class="hljs-property">result</span><br>    <br>    <span class="hljs-comment">//创建一些存储对象</span><br>    db.<span class="hljs-title function_">createObjectStore</span>(<span class="hljs-string">&quot;user&quot;</span>, &#123; <span class="hljs-attr">keyPath</span>: <span class="hljs-string">&quot;id&quot;</span> &#125;)<br>&#125;<br><br></code></pre></td></tr></table></figure>
+
+<p><img src="/.com//Users\Administrator\AppData\Roaming\Typora\typora-user-images\1650001386007.png" srcset="/img/loading.gif" lazyload alt="1650001386007"></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs js">cursor.<span class="hljs-title function_">delete</span>()<br>cursor.<span class="hljs-title function_">continue</span>()<br>cursor.<span class="hljs-title function_">update</span>()<br>cursor.<span class="hljs-title function_">continue</span>()<br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(cursor.<span class="hljs-property">key</span>, cursor.<span class="hljs-property">value</span>)<br></code></pre></td></tr></table></figure>
+
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E6%8A%80%E6%9C%AF/">技术</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/Js%E9%AB%98%E7%BA%A7/">Js高级</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2022/04/14/vue-router/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">vue-router</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2022/04/12/interview-2/">
+                        <span class="hidden-mobile">面试题2 - 闭包</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+    
+  </div>
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  
+    <script  src="https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4/anchor.min.js" ></script>
+  
+  
+    <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js" ></script>
+  
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+        typing(title);
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>
