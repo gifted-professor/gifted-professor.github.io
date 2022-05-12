@@ -1,0 +1,590 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/logo.png">
+  <link rel="icon" href="/img/logo.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="1 前端进阶小知识Html🍔HTML跟网页有什么关系很多时候页面加载时间过长是因为页面设计不合理导致的（和这个元素的设计）  浏览器的加载过程是怎么样的？  首先浏览器加载页面会经历两个过程 GUI渲染线程 以及 JavaScript引擎线程 前者负责 渲染浏览器界面HTML元素 后者负责 处理JavaScript脚本程序 1234567head元素会首先被解析 meta元素 link元素（涉及">
+<meta property="og:type" content="article">
+<meta property="og:title" content="被删">
+<meta property="og:url" content="http://example.com/2022/05/03/%E8%A2%AB%E5%88%A0/index.html">
+<meta property="og:site_name" content="giftedProfessor&#39;s blog">
+<meta property="og:description" content="1 前端进阶小知识Html🍔HTML跟网页有什么关系很多时候页面加载时间过长是因为页面设计不合理导致的（和这个元素的设计）  浏览器的加载过程是怎么样的？  首先浏览器加载页面会经历两个过程 GUI渲染线程 以及 JavaScript引擎线程 前者负责 渲染浏览器界面HTML元素 后者负责 处理JavaScript脚本程序 1234567head元素会首先被解析 meta元素 link元素（涉及">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-05-03T01:42:48.000Z">
+<meta property="article:modified_time" content="2022-05-10T00:14:31.387Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="B站课程总结">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  <title>被删 - giftedProfessor&#39;s blog</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4/github-markdown.min.css" />
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hint.css@2/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.14","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 6.1.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>天才较瘦</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="被删">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2022-05-03 09:42" pubdate>
+        2022年5月3日 上午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      3.6k 字
+    </span>
+  
+
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      30 分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">被删</h1>
+            
+            <div class="markdown-body">
+              <p>1</p>
+<h1 id="前端进阶小知识"><a href="#前端进阶小知识" class="headerlink" title="前端进阶小知识"></a>前端进阶小知识</h1><h2 id="Html"><a href="#Html" class="headerlink" title="Html"></a><code>Html</code></h2><h3 id="🍔HTML跟网页有什么关系"><a href="#🍔HTML跟网页有什么关系" class="headerlink" title="🍔HTML跟网页有什么关系"></a>🍔HTML跟网页有什么关系</h3><p>很多时候页面加载时间过长是因为页面设计不合理导致的（<style>和<script>这个元素的设计）</p>
+<ul>
+<li><h4 id="浏览器的加载过程是怎么样的？"><a href="#浏览器的加载过程是怎么样的？" class="headerlink" title="浏览器的加载过程是怎么样的？"></a>浏览器的加载过程是怎么样的？</h4></li>
+</ul>
+<p>首先浏览器加载页面会经历两个过程 <strong>GUI渲染线程</strong> 以及 <strong>JavaScript引擎线程</strong></p>
+<p>前者负责 <strong>渲染浏览器界面HTML元素</strong></p>
+<p>后者负责 <strong>处理JavaScript脚本程序</strong></p>
+<figure class="highlight mipsasm"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></div></td><td class="code"><pre><code class="hljs mipsasm">head元素会首先被解析 meta元素 link元素（涉及外部资源）	<span class="hljs-keyword">script元素（利用src元素指向外部资源）</span><br><span class="hljs-keyword"></span>浏览器解析完head元素之后会先暂停解析 下载<span class="hljs-keyword">JavaScript脚本</span><br><span class="hljs-keyword"></span><span class="hljs-keyword">JS脚本下载完成之后 </span>浏览器的控制权就会转交给<span class="hljs-keyword">JS引擎</span><br><span class="hljs-keyword"></span>脚本执行完成之后 控制权会转交给渲染引擎 渲染引擎继续往下解析HTML页面<br>此时&lt;<span class="hljs-keyword">body&gt;的内容开始被解析 </span>浏览器开始渲染页面<br>&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;<br><br></code></pre></td></tr></table></figure>
+
+<p>所以呢 为什么会产生页面加载的情况 >>>>>>>> 就是因为如果外部脚本的加载时间很长的话 就会造成网页长时间无法响应 造成页面假死状态</p>
+<ul>
+<li><h4 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h4></li>
+</ul>
+<p>如果想要快速的将页面呈现给用户的话</p>
+<ol>
+<li>可以将JavaScript脚本放在<body>的最后面</li>
+<li>可以使用 **<code>defer</code> / <code>async</code> / <code>preload</code>**来标记<script>标签 <strong>从而控制js的加载顺序</strong></li>
+</ol>
+<p>**<code>async</code>**就是通过异步的方式来获取资源 不会阻碍到html元素的解析</p>
+<h3 id="🍔HTML跟DOM"><a href="#🍔HTML跟DOM" class="headerlink" title="🍔HTML跟DOM"></a>🍔HTML跟DOM</h3><blockquote>
+<p><strong>DOM(document object model)</strong></p>
+<p>DOM是用来操作和描述HTML文档的<strong>接口</strong></p>
+</blockquote>
+<p>一般我们<strong>使用JavaScript来操作DOM接口（但是不是只有js才能操作DOM）</strong>  以此来实现页面的动态变化 以及与用户的交互操作</p>
+<ul>
+<li><h4 id="DOM是怎么操作HTML的？"><a href="#DOM是怎么操作HTML的？" class="headerlink" title="DOM是怎么操作HTML的？"></a>DOM是怎么操作HTML的？</h4></li>
+</ul>
+<p>我们常见的 <code>HTML</code> 元素一般在浏览器中会被分析成节点 这些节点呈现 <strong>树状结构</strong> 所以一般会有 <strong>DOM树</strong> 的称呼 包含 <strong>parent -- child -- sibling</strong></p>
+<p>对于一些DOM接口API 其实我们并不陌生👇</p>
+<blockquote>
+<ul>
+<li><code>document.getElementById(id)</code>：根据<code>id</code>获取元素</li>
+<li><code>document.getElementsByTagName(name)</code>：根据<code>tag</code>获取元素</li>
+<li><code>document.createElement(name)</code>：创建元素</li>
+<li><code>parentNode.appendChild(node)</code>：添加子元素</li>
+<li><code>element.innerHTML</code>：设置/获取元素内容</li>
+<li><code>element.styles</code>：设置/获取元素样式</li>
+<li><code>element.setAttribute()</code>：设置元素属性值</li>
+<li><code>element.getAttribute()</code>：获取元素属性值</li>
+<li><code>element.addEventListener()</code>：添加事件绑定</li>
+</ul>
+</blockquote>
+<ul>
+<li><h4 id="DOM事件流"><a href="#DOM事件流" class="headerlink" title="DOM事件流"></a>DOM事件流</h4></li>
+</ul>
+<p>DOM事件流（event flow）存在三个阶段 >>>>> <strong>捕获阶段 目标阶段 冒泡阶段</strong></p>
+<ul>
+<li><h4 id="DOM事件捕获"><a href="#DOM事件捕获" class="headerlink" title="DOM事件捕获"></a>DOM事件捕获</h4></li>
+</ul>
+<p>例：现在有一个 <p> 元素触发了点击事件 那么事件捕获的顺序就是 >>>>>>>> document - > html - > body - > div - > p</p>
+<ul>
+<li><h4 id="事件冒泡"><a href="#事件冒泡" class="headerlink" title="事件冒泡"></a>事件冒泡</h4></li>
+</ul>
+<p>事件冒泡的话跟事件捕获相反 还是那个例子的话 事件冒泡的顺序就是从 <p> 元素一直冒泡到根节点  <strong><code>DOM</code>标准事件流的触发的先后顺序为：先捕获再冒泡，即当触发 dom 事件时，会先进行事件捕获，捕获到事件源之后通过事件传播进行事件冒泡。</strong> </p>
+<ul>
+<li><h4 id="事件委托"><a href="#事件委托" class="headerlink" title="事件委托"></a>事件委托</h4></li>
+</ul>
+<p><strong>what?</strong>   通过将事件添加到父节点 从而将时间委托给父节点来触发处理函数</p>
+<p><strong>why?</strong>    绑定子元素需要很多次绑定 但是父元素的话只需要一次 直接将事件委托给父节点的话 我们对子元素进行的操作都不需要重新进行事件绑定</p>
+<h4 id="⭐虚拟DOM"><a href="#⭐虚拟DOM" class="headerlink" title="⭐虚拟DOM"></a>⭐虚拟DOM</h4><p>虚拟DOM东西实在是太多了 就多出来一个文章来说吧</p>
+<h3 id="🍔BOM和DOM"><a href="#🍔BOM和DOM" class="headerlink" title="🍔BOM和DOM"></a>🍔BOM和DOM</h3><p>下次再说吧</p>
+<h4 id=""><a href="#" class="headerlink" title=""></a></h4><h2 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h2><ul>
+<li>页面布局的基本规则</li>
+</ul>
+<p>关于 <strong>margin</strong> 的叠加 两个相邻的元素可能会产生margin的叠加 </p>
+<p><strong>例外：</strong> 行内框 浮动框 绝对定位框          他们的外边距就不会叠加</p>
+<figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs maxima">.<span class="hljs-built_in">border</span>-<span class="hljs-built_in">box</span> &#123;<br>	<span class="hljs-built_in">box</span>-sizing: <span class="hljs-built_in">border</span>-<span class="hljs-built_in">box</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>不这样设置的话 正常的box-sizing是 content-box 也就是所占的总高度为 <strong>元素 + padding + border</strong></p>
+<p>但是如果设置了 border-box 的话 元素的总高度就是 height width     我们的设置不会改变他的总高度宽度</p>
+<ul>
+<li>内联元素和块状元素</li>
+</ul>
+<p><a>（内联元素）可以跟其他元素位于同一行 且宽高设置无效</p>
+<p>< div > （块状元素）不能与....... 且宽高设置有效</p>
+<p><strong>所以很多时候我们设置宽高无效很有可能是因为。。。。。。</strong></p>
+<p><strong>解决方案👇</strong></p>
+<p>设置display的值 block为块状元素     inline为内联元素</p>
+<p>结合体   inline-block   </p>
+<ul>
+<li><strong>将元素固定在页面的某个位置</strong></li>
+</ul>
+<p>文档流的布局和元素定位的样式设置</p>
+<p><strong>文档流的布局：</strong></p>
+<ul>
+<li><p>fixed(相对浏览器窗口进行绝对定位)     absolute(相对非static父元素绝对定位)    </p>
+<p>static(默认值)     inherit(继承父元素)      relative(相对定位)</p>
+</li>
+</ul>
+<p>元素position央视为static时   元素会忽略 top / bottom / left / right / z-index 声明 给<strong>position：static的元素设置定位是无效的</strong></p>
+<p>。。。。。。。。relative时 元素会保持原有的文档流 但是相对本身的原始位置发生位移 且会占用空间</p>
+<p>这个东西会撑开父元素有溢出部分</p>
+<p><strong>overflow:hidden</strong> 这个还是要看一下的 上次应用就是在那个 购物车界面 还有一个上次场地管家的设备也可以用到这个啊啊啊啊</p>
+<p>。。。。。。。。absolute时 元素会保持原有的文档流 但是相对本身的原始位置发生位移 且会占</p>
+<p><strong>对于同级的元素 可以通过设置z-index的值 改变元素的堆叠顺序</strong></p>
+<p>z-index只会设置同一父元素以下的子级元素的堆叠顺序 所以子元素的z-index是相对于父元素来说的 如果父元素的z-index值很低 仍然会被其他元素遮挡</p>
+<p><strong>常见的页面布局方式：</strong></p>
+<p><strong>传统布局方式：position：fixed     position:absolute     float</strong></p>
+<ul>
+<li>为什么设置一个元素为float之后 元素的高度就歪了</li>
+</ul>
+<p>如果父元素内部不存在其他普通硫元素 就会表现出高度为0 <strong>高度塌陷</strong></p>
+<p><strong>解决方案</strong></p>
+<p>使用overflow:hidden  (此时高度为auto)</p>
+<p>使父元素也成为float元素       使用clear清除浮动</p>
+<p>**flex布局方式 **</p>
+<p>同时使用 <strong>display:flex</strong>可以让元素弹性布局    </p>
+<p>可以通过调成flexbox来实现需要的页面效果</p>
+<ul>
+<li>使用flex-direction调整 Flex 元素的排列方向 主轴的方向</li>
+<li>flex-wrap实现多行 Flex 容器如何换行</li>
+<li>justify-content调整 Flex 元素在主轴的对齐方式</li>
+<li>align-items调整 Flex 元素在交叉轴上如何对齐</li>
+<li>align-content 调整多跟轴线的对齐方式</li>
+</ul>
+<p><strong>Grid布局方式</strong></p>
+<h2 id="JS是如何实现继承的？"><a href="#JS是如何实现继承的？" class="headerlink" title="JS是如何实现继承的？"></a>JS是如何实现继承的？</h2><p>在js中 不管是函数 数组还是 对象 都是 Objetc 的实例 除了原始类型以外 其他都是对象</p>
+<p><strong>所有的函数又有一个特别的属性 prototype 该属性的值是一个对象（原型对象）</strong></p>
+<p>__ prooto __ 属性指向对象的原型对象 对于函数来说 它的原型对象就是prototype</p>
+<ul>
+<li><h4 id="原型对象跟对象的关系"><a href="#原型对象跟对象的关系" class="headerlink" title="原型对象跟对象的关系"></a>原型对象跟对象的关系</h4></li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> <span class="hljs-title class_">Person</span> = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Person</span><br>其实<span class="hljs-title class_">Person</span>就是构造函数 它的原型对象就是<span class="hljs-title class_">Person</span>.<span class="hljs-property"><span class="hljs-keyword">prototype</span></span>    是原型对象的constructor（构造器）<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li><h4 id="使用prototype-和-proto-实现继承"><a href="#使用prototype-和-proto-实现继承" class="headerlink" title="使用prototype 和 __ proto __ 实现继承"></a>使用prototype 和 __ proto __ 实现继承</h4></li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs js">A.<span class="hljs-property">__proto__</span> = B<br>此时就将B的属性和方法赋值给B了		<span class="hljs-comment">//这就是继承</span><br><br><span class="hljs-comment">//当我们使用const lily = new Person(&quot;Lily&quot;) 时 其实执行的是这个代码</span><br><span class="hljs-keyword">const</span> lily = &#123;&#125;;<br>lily.<span class="hljs-property">__proto__</span> = <span class="hljs-title class_">Person</span>.<span class="hljs-property"><span class="hljs-keyword">prototype</span></span>;<br><span class="hljs-title class_">Person</span>.<span class="hljs-title function_">call</span>(lily, <span class="hljs-string">&quot;Lily&quot;</span>)<br></code></pre></td></tr></table></figure>
+
+<p><code>Person.prototype</code>.__ <code>proto</code> __ = Object.prototype</p>
+<blockquote>
+<p><strong>每个函数的原型对象（Person.constrctor)都拥有constructor属性 指向该原型对象的构造函数（Person）</strong></p>
+<p><strong>使用构造函数   new Person()      可以创建对象 创建的对象称为实例对象</strong></p>
+<p><strong>实例对象通过将 __ proto __ 属性指向构造函数的原型对象 （Person.prototype), 实现了该原型对象的继承</strong></p>
+</blockquote>
+<ul>
+<li><h4 id="通过原型链访问对象的属性和方法"><a href="#通过原型链访问对象的属性和方法" class="headerlink" title="通过原型链访问对象的属性和方法"></a>通过原型链访问对象的属性和方法</h4></li>
+</ul>
+<p>首先会在该对象上搜寻 没有的话就像上找该对象的原型对象 Object.prototype.__ proto __ = null **由于null没有原型对象 所以找到最后没有的话 就会报undefined **</p>
+<p>所以之前就有一个 </p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs markdown">.<span class="hljs-strong">__proto__</span>..<span class="hljs-strong">__proto__</span>..<span class="hljs-strong">__proto__</span>..<span class="hljs-strong">__proto__</span><br></code></pre></td></tr></table></figure>
+
+</style></p>
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E6%8A%80%E6%9C%AF/">技术</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/B%E7%AB%99%E8%AF%BE%E7%A8%8B%E6%80%BB%E7%BB%93/">B站课程总结</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2022/05/03/%E2%80%9C%E8%99%9A%E6%8B%9FDOM%E2%80%9D/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">“虚拟DOM”</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2022/05/02/%E5%90%8E%E5%8F%B0%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F%E7%9A%84%E6%80%BB%E7%BB%93/">
+                        <span class="hidden-mobile">后台管理系统总结</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+    
+  </div>
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  
+    <script  src="https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4/anchor.min.js" ></script>
+  
+  
+    <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js" ></script>
+  
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+        typing(title);
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>
