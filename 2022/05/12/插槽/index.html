@@ -16,21 +16,21 @@
   <meta name="author" content="John Doe">
   <meta name="keywords" content="">
   
-    <meta name="description" content="1 合并多个对象12345678910const city &#x3D; &amp;#123;    name: &amp;#x27;shenzhen&amp;#x27;,    population: &amp;#x27;2000000000&amp;#x27;,&amp;#125;const location &#x3D; &amp;#123;    longitude: &amp;#x27;106.55&amp;#x27;,    latitude: &amp;#x27;29.56&amp;#x2">
+    <meta name="description" content="文章内容来自  其实这个插槽还是经常看到的 那时候刚刚学 Vue 的时候还是接触到的 但是太久没用也忘了 只知道这个东西是插槽 今天重温一下吧 🍔什么是插槽？其实这个东西就是对于自组建的一个延伸 父组件可以通过 &lt;slot&gt; 更好地给子组件内部传递内容 12345&lt;!-- 这是子组件--&gt;&lt;div class&#x3D;&quot;child&quot;&gt;  &lt;h">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ES6使用技巧">
-<meta property="og:url" content="http://example.com/2022/05/12/ES6%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/index.html">
+<meta property="og:title" content="插槽">
+<meta property="og:url" content="http://example.com/2022/05/12/%E6%8F%92%E6%A7%BD/index.html">
 <meta property="og:site_name" content="giftedProfessor&#39;s blog">
-<meta property="og:description" content="1 合并多个对象12345678910const city &#x3D; &amp;#123;    name: &amp;#x27;shenzhen&amp;#x27;,    population: &amp;#x27;2000000000&amp;#x27;,&amp;#125;const location &#x3D; &amp;#123;    longitude: &amp;#x27;106.55&amp;#x27;,    latitude: &amp;#x27;29.56&amp;#x2">
+<meta property="og:description" content="文章内容来自  其实这个插槽还是经常看到的 那时候刚刚学 Vue 的时候还是接触到的 但是太久没用也忘了 只知道这个东西是插槽 今天重温一下吧 🍔什么是插槽？其实这个东西就是对于自组建的一个延伸 父组件可以通过 &lt;slot&gt; 更好地给子组件内部传递内容 12345&lt;!-- 这是子组件--&gt;&lt;div class&#x3D;&quot;child&quot;&gt;  &lt;h">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-05-12T01:24:50.000Z">
-<meta property="article:modified_time" content="2022-05-12T01:57:34.758Z">
+<meta property="article:published_time" content="2022-05-12T07:52:44.000Z">
+<meta property="article:modified_time" content="2022-05-12T08:23:21.019Z">
 <meta property="article:author" content="John Doe">
-<meta property="article:tag" content="ES6+">
+<meta property="article:tag" content="Vue">
 <meta name="twitter:card" content="summary_large_image">
   
   
-  <title>ES6使用技巧 - giftedProfessor&#39;s blog</title>
+  <title>插槽 - giftedProfessor&#39;s blog</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
@@ -176,7 +176,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="ES6使用技巧">
+            <span class="h2" id="subtitle" title="插槽">
               
             </span>
 
@@ -186,8 +186,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2022-05-12 09:24" pubdate>
-        2022年5月12日 上午
+      <time datetime="2022-05-12 15:52" pubdate>
+        2022年5月12日 下午
       </time>
     </span>
   
@@ -197,7 +197,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      561 字
+      1.2k 字
     </span>
   
 
@@ -206,7 +206,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      5 分钟
+      11 分钟
     </span>
   
 
@@ -235,20 +235,31 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">ES6使用技巧</h1>
+            <h1 style="display: none">插槽</h1>
             
             <div class="markdown-body">
-              <p>1</p>
-<h4 id="合并多个对象"><a href="#合并多个对象" class="headerlink" title="合并多个对象"></a>合并多个对象</h4><figure class="highlight js"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></div></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> city = &#123;<br>    <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;shenzhen&#x27;</span>,<br>    <span class="hljs-attr">population</span>: <span class="hljs-string">&#x27;2000000000&#x27;</span>,<br>&#125;<br><span class="hljs-keyword">const</span> location = &#123;<br>    <span class="hljs-attr">longitude</span>: <span class="hljs-string">&#x27;106.55&#x27;</span>,<br>    <span class="hljs-attr">latitude</span>: <span class="hljs-string">&#x27;29.56&#x27;</span><br>&#125;<br><span class="hljs-keyword">const</span> fullCity = &#123; ...city, ...location &#125;<br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(fullCity)		<span class="hljs-comment">//这样打印出来的东西就可以把上面的四个key - value都加进来啦</span><br></code></pre></td></tr></table></figure>
+              <p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_42492055/article/details/82558971">文章内容来自</a></p>
+<blockquote>
+<h5 id="其实这个插槽还是经常看到的-那时候刚刚学-Vue-的时候还是接触到的-但是太久没用也忘了-只知道这个东西是插槽-今天重温一下吧"><a href="#其实这个插槽还是经常看到的-那时候刚刚学-Vue-的时候还是接触到的-但是太久没用也忘了-只知道这个东西是插槽-今天重温一下吧" class="headerlink" title="其实这个插槽还是经常看到的 那时候刚刚学 Vue 的时候还是接触到的 但是太久没用也忘了 只知道这个东西是插槽 今天重温一下吧"></a>其实这个插槽还是经常看到的 那时候刚刚学 Vue 的时候还是接触到的 但是太久没用也忘了 只知道这个东西是插槽 今天重温一下吧</h5></blockquote>
+<h3 id="🍔什么是插槽？"><a href="#🍔什么是插槽？" class="headerlink" title="🍔什么是插槽？"></a>🍔什么是插槽？</h3><p>其实这个东西就是对于自组建的一个延伸 父组件可以通过 <code>&lt;slot&gt;</code> 更好地给子组件内部传递内容</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div></td><td class="code"><pre><code class="hljs vue">&lt;!-- 这是子组件--&gt;<br>&lt;div class=&quot;child&quot;&gt;<br>  &lt;h2&gt;Child的标题&lt;/h2&gt;<br>  &lt;slot&gt;我是一个萝卜坑&lt;/slot&gt;<br>&lt;/div&gt;<br></code></pre></td></tr></table></figure>
 
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs vue">&lt;!-- 这是父组件--&gt;<br>&lt;div class=&quot;father&quot;&gt;<br>  &lt;h1&gt;Father的标题&lt;/h1&gt;<br>  &lt;Child&gt;<br>    我是个萝卜~<br>  &lt;/Child&gt;<br>&lt;/div&gt;<br></code></pre></td></tr></table></figure>
 
+<blockquote>
+<h1 id="Father的标题"><a href="#Father的标题" class="headerlink" title="Father的标题"></a>Father的标题</h1><h2 id="Child的标题"><a href="#Child的标题" class="headerlink" title="Child的标题"></a>Child的标题</h2><p>我是一个萝卜~</p>
+</blockquote>
+<h3 id="🍔插槽与props的区别"><a href="#🍔插槽与props的区别" class="headerlink" title="🍔插槽与props的区别"></a>🍔插槽与props的区别</h3><p>通过props属性，父组件只能向子组件传递属性、方法</p>
+<h3 id="🍔关于props"><a href="#🍔关于props" class="headerlink" title="🍔关于props"></a>🍔关于props</h3><ul>
+<li><h4 id="父组件传值给子组件"><a href="#父组件传值给子组件" class="headerlink" title="父组件传值给子组件"></a>父组件传值给子组件</h4></li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs vue">&lt;--我是父组件--&gt;<br>&lt;template&gt;<br>	&lt;user :sunny=&quot;sun&quot;&gt;&lt;/user&gt;    //这里的 : 其实是v-bind的简写 将sun传给子组件<br>&lt;/template&gt;<br>    <br>&lt;script setup&gt;<br>    import &#123; ref &#125; from &#x27;vue&#x27;<br>    const sun = ref([<br>        &#123;<br>            name: &quot;Luffy&quot;,<br>            position: &quot;船长&quot;，<br>            show:false,<br>        &#125;,<br>        &#123;<br>            name: &quot;Luffy&quot;,<br>            position: &quot;船长&quot;，<br>            show:false,<br>        &#125;,<br>        ................<br>    ])<br>    <br>    return &#123; sun &#125;<br>&lt;/script&gt;<br></code></pre></td></tr></table></figure>
 
-<h4 id="x3D-x3D-与-x3D-x3D-x3D"><a href="#x3D-x3D-与-x3D-x3D-x3D" class="headerlink" title="&#x3D;&#x3D; 与 &#x3D;&#x3D;&#x3D;"></a>&#x3D;&#x3D; 与 &#x3D;&#x3D;&#x3D;</h4><p>其实这两个最大的区别就在于 <strong>是否会进行类型转换</strong></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// ==    -&gt;     类型转换</span><br><span class="hljs-comment">// ===   -&gt;     无类型转换</span><br><br><span class="hljs-number">0</span> == <span class="hljs-literal">false</span>	<span class="hljs-comment">//true</span><br><span class="hljs-number">0</span> === <span class="hljs-literal">false</span>	<span class="hljs-comment">//false</span><br><span class="hljs-number">1</span> == <span class="hljs-string">&quot;1&quot;</span>	<span class="hljs-comment">//true</span><br><span class="hljs-number">1</span> === <span class="hljs-string">&quot;1&quot;</span>	<span class="hljs-comment">//false</span><br><span class="hljs-literal">null</span> == <span class="hljs-literal">undefined</span>	<span class="hljs-comment">//true</span><br><span class="hljs-literal">null</span> === <span class="hljs-literal">undefined</span>	<span class="hljs-comment">//false</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs vue">&lt;--我是子组件--&gt;<br>&lt;template&gt;<br>	&lt;li v-for = &quot;user in sunny&quot;&gt;<br>    	&#123;&#123;user.name&#125;&#125;是一个&#123;&#123;user.position&#125;&#125;<br>    &lt;/li&gt;<br>&lt;/template&gt;<br><br>&lt;script&gt;<br>export default&#123;<br>    name: &quot;users&quot;,<br>    props: &#123;<br>        sunny: &#123;<br>            type: Array,<br>            required: true<br>        &#125;<br>    &#125;<br>&#125;<br>&lt;/script&gt;<br></code></pre></td></tr></table></figure>
 
-
-
-<h4 id="关于"><a href="#关于" class="headerlink" title="关于  ?."></a>关于  <code>?.</code></h4><p>这个东西其实叫做 <strong>可选链操作符</strong> 通过这个可以读取位于连接对象链深处的属性的值 当你引用为空时 不会引起错误 表达式的返回值是 <code>undefined</code></p>
+<ul>
+<li>ziz</li>
+</ul>
 
             </div>
             <hr>
@@ -266,7 +277,7 @@
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/ES6/">ES6+</a>
+                      <a class="hover-with-bg" href="/tags/Vue/">Vue</a>
                     
                   </div>
                 
@@ -283,9 +294,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/05/12/%E6%8F%92%E6%A7%BD/">
+                      <a href="/2022/05/13/vue3/">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">插槽</span>
+                        <span class="hidden-mobile">vue3</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -293,8 +304,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/05/12/Node/">
-                        <span class="hidden-mobile">Node</span>
+                      <a href="/2022/05/12/ES6%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/">
+                        <span class="hidden-mobile">ES6使用技巧</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

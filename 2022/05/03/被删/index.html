@@ -24,7 +24,7 @@
 <meta property="og:description" content="1 前端进阶小知识Html🍔HTML跟网页有什么关系很多时候页面加载时间过长是因为页面设计不合理导致的（和这个元素的设计）  浏览器的加载过程是怎么样的？  首先浏览器加载页面会经历两个过程 GUI渲染线程 以及 JavaScript引擎线程 前者负责 渲染浏览器界面HTML元素 后者负责 处理JavaScript脚本程序 1234567head元素会首先被解析 meta元素 link元素（涉及">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-05-03T01:42:48.000Z">
-<meta property="article:modified_time" content="2022-05-10T00:14:31.387Z">
+<meta property="article:modified_time" content="2022-05-17T05:35:10.343Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="B站课程总结">
 <meta name="twitter:card" content="summary_large_image">
@@ -197,7 +197,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      3.6k 字
+      4.5k 字
     </span>
   
 
@@ -206,7 +206,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      30 分钟
+      38 分钟
     </span>
   
 
@@ -381,6 +381,32 @@
 <p>所以之前就有一个 </p>
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs markdown">.<span class="hljs-strong">__proto__</span>..<span class="hljs-strong">__proto__</span>..<span class="hljs-strong">__proto__</span>..<span class="hljs-strong">__proto__</span><br></code></pre></td></tr></table></figure>
 
+
+
+<h2 id="JS引擎如何执行JavaScript代码"><a href="#JS引擎如何执行JavaScript代码" class="headerlink" title="JS引擎如何执行JavaScript代码"></a>JS引擎如何执行JavaScript代码</h2><h4 id="语法分析阶段"><a href="#语法分析阶段" class="headerlink" title="语法分析阶段"></a>语法分析阶段</h4><p>JS引擎再执行JS代码的过程中 会从上到下执行 进行 <strong>词法分析、语法分析、语义分析等处理</strong> 并且在解析完成之后生成 <strong>AST（抽象语法树）</strong> 最终根据AST可以生成 CPU 可以执行的机器码并执行</p>
+<h4 id="编译阶段"><a href="#编译阶段" class="headerlink" title="编译阶段"></a>编译阶段</h4><p>进行 <strong>执行上下文</strong> 的创建 包括创建变量对象 建立作用域链 确定this的指向</p>
+<p>每次进入不同的运行环境 V8引擎都会创建一个新的执行上下文</p>
+<h5 id="🍔执行上下文的创建"><a href="#🍔执行上下文的创建" class="headerlink" title="🍔执行上下文的创建"></a>🍔执行上下文的创建</h5><p><strong>- - - JavaScript运行环境包括全局环境 函数环境和 eval - - -</strong></p>
+<ul>
+<li><p>首先会先创建一个 <strong>全局环境</strong> 全局环境只有在<strong>应用程序退出之后才会被销毁</strong></p>
+</li>
+<li><p>每个函数都会有一个自己的运行环境 当函数被调用的时候 就会进入这个函数自己的运行环境 当这个环境中的代码被全部执行完毕之后 该环境就会被销毁 <strong>即使是一个函数 在多次调用的时候也会创建出多个不用的函数环境</strong></p>
+</li>
+<li><p>在不同的运行环境中 变量和函数可以访问的其他数据范围不同 环境的行为也有所区别</p>
+</li>
+<li><p>没进入一个新的运行环境时 JavaScript都会创建一个新的执行上下文 该过程包括👇</p>
+<ul>
+<li>建立作用域链（Scope Chain）</li>
+<li>创建变量对象（VO）</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs js">什么是变量对象？<br><span class="hljs-comment">//每个函数执行上下文中都会有一个关联的变量对象 该对象上会保存这个上下文中定义的所有变量和函数</span><br>全局环境中的变量对象？<br><span class="hljs-comment">//全局环境的变量对象是window对象 所有的全局变量和函数都是作为window对象的属性和方法创建的</span><br><span class="hljs-title class_">Node</span>中的全局环境的变量对象？<br><span class="hljs-comment">//global对象</span><br><br>创建变量对象的过程<br><span class="hljs-comment">//首先会创建 arguments对象（仅函数环境下） 同时会检查当前上下文的函数声明和变量声明</span><br><span class="hljs-comment">//  变量声明：此时会给变量分配内存 初始化为undefined 这个过程是会进行定义声明 执行阶段才执行赋值语句（变量提升）</span><br><span class="hljs-comment">//   函数声明：此时会在内存中创建函数对象 并且初始化为该函数对象（函数提升）</span><br>函数提升优先于变量提升 因为变量提升所带来的变量很容易被覆盖掉 同时导致本该被销毁的变量没有被销毁的情况（暂时性死区？） 所以<span class="hljs-title class_">ES6</span>中引入了 <span class="hljs-keyword">let</span> 和 <span class="hljs-keyword">const</span> 等关键词 这样子的话就可以产生块级作用域<br><br><span class="hljs-comment">//JavaScript是怎么支持块级作用域的？</span><br><span class="hljs-comment">//JS采用的是词法作用域（静态作用域）</span><br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>确定this的指向</li>
+</ul>
+</li>
+</ul>
+<h4 id="执行阶段"><a href="#执行阶段" class="headerlink" title="执行阶段"></a>执行阶段</h4><p>将编译阶段中创建的执行上下文压入调用栈 并成为正在运行的执行上下文 代码执行结束之后 将其弹出调用栈</p>
 </style></p>
             </div>
             <hr>
