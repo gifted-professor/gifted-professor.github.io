@@ -1,51 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  
   <url>
     <loc>http://example.com/posts/0.html</loc>
-    
     <lastmod>2022-11-07</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
   </url>
-  
   <url>
     <loc>http://example.com/posts/1b970c35.html</loc>
-    
     <lastmod>2022-11-05</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
   </url>
-  
   <url>
     <loc>http://example.com/posts/8f59160.html</loc>
-    
     <lastmod>2022-11-04</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
   </url>
-  
   <url>
     <loc>http://example.com/posts/4a17b156.html</loc>
-    
     <lastmod>2022-11-01</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
   </url>
-  
-
-  <url>
-    <loc>http://example.com/</loc>
-    <lastmod>2022-11-07</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>1.0</priority>
-  </url>
-
-  
-
-  
-</urlset>
+</urlset> 
